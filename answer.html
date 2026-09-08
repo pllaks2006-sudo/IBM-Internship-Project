@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Study Assistant Answer</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            padding: 50px;
+        }
+
+        .card {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #4f46e5;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            color: #3730a3;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .question-box {
+            background: #eef2ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .answer-box {
+            background: #f0fdf4;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>🤖 AI Study Assistant Answer</h1>
+
+        <h3>Your Question</h3>
+
+        <div class="question-box">
+            <p>{{ question }}</p>
+        </div>
+
+        <h3>Answer</h3>
+
+        <div class="answer-box">
+            <p>{{ answer }}</p>
+        </div>
+
+        <a href="/">
+            <button>🏠 Back to Home</button>
+        </a>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Study Plan</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #4f46e5;
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .day {
+            background: #eef2ff;
+            padding: 15px;
+            margin-top: 12px;
+            border-radius: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            background: #4f46e5;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .button:hover {
+            background: #3730a3;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>📅 Your Study Plan</h1>
+
+            <h3>Subject: {{ subject }}</h3>
+
+            <h3>Duration: {{ days }} Days</h3>
+
+
+            {% for item in plan %}
+
+                <div class="day">
+
+                    <strong>Day {{ item.day }}</strong>
+
+                    <p>{{ item.topic }}</p>
+
+                </div>
+
+            {% endfor %}
+
+
+            <a href="/" class="button">
+
+                ← Back to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

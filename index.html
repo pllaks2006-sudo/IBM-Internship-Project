@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Learning & Study Assistant</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .header {
+            background: #4f46e5;
+            color: white;
+            text-align: center;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin-bottom: 15px;
+        }
+
+        .welcome {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            margin-bottom: 15px;
+        }
+
+        .logout-btn {
+            background: white;
+            color: #4f46e5;
+            margin-top: 10px;
+        }
+
+        .logout-btn:hover {
+            background: #e0e7ff;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4f46e5;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .feature-box {
+            background: #eef2ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .feature-box h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <h1>🎓 AI Learning & Study Assistant</h1>
+
+            <p class="welcome">
+                👋 Welcome, {{ username }}!
+            </p>
+
+            <p class="subtitle">
+                Your Smart Learning Companion
+            </p>
+
+            <a href="/logout">
+
+                <button type="button" class="logout-btn">
+                    🚪 Logout
+                </button>
+
+            </a>
+
+        </div>
+
+
+        <!-- STUDY PLAN -->
+
+        <div class="card">
+
+            <h2>📅 Create Study Plan</h2>
+
+            <form action="/study-plan" method="POST">
+
+                <input
+                    type="text"
+                    name="subject"
+                    placeholder="Enter Subject"
+                    required
+                >
+
+                <input
+                    type="number"
+                    name="days"
+                    placeholder="Enter Number of Days"
+                    required
+                >
+
+                <button type="submit">
+                    Generate Study Plan
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- PROJECT FEATURES -->
+
+        <div class="card">
+
+            <h2>🤖 Project Features</h2>
+
+            <div class="features">
+
+                <div class="feature-box">
+
+                    📅
+
+                    <h3>Study Plan</h3>
+
+                    <p>Create your learning schedule.</p>
+
+                </div>
+
+
+                <div class="feature-box">
+
+                    📝
+
+                    <h3>Quiz</h3>
+
+                    <p>Test your knowledge.</p>
+
+                </div>
+
+
+                <div class="feature-box">
+
+                    📚
+
+                    <h3>Course Q&A</h3>
+
+                    <p>Ask course-related questions.</p>
+
+                </div>
+
+
+                <div class="feature-box">
+
+                    🧠
+
+                    <h3>Learning Assistant</h3>
+
+                    <p>Improve your learning experience.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUIZ GENERATOR -->
+
+        <div class="card">
+
+            <h2>📝 Quiz Generator</h2>
+
+            <p>Test your knowledge with a quiz.</p>
+
+            <a href="/quiz">
+
+                <button type="button">
+                    Start Quiz
+                </button>
+
+            </a>
+
+        </div>
+
+
+        <!-- COURSE Q&A -->
+
+        <div class="card">
+
+            <h2>📚 Course Q&A</h2>
+
+            <p>Ask your course-related questions.</p>
+
+            <form action="/ask-question" method="POST">
+
+                <input
+                    type="text"
+                    name="question"
+                    placeholder="Ask your question (Example: What is Python?)"
+                    required
+                >
+
+                <button type="submit">
+                    Ask Question 🤖
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- LEARNING ASSISTANT -->
+
+        <div class="card">
+
+            <h2>🧠 Learning Assistant</h2>
+
+            <p>Enter a topic and get useful learning tips.</p>
+
+            <form action="/learning-assistant" method="POST">
+
+                <input
+                    type="text"
+                    name="topic"
+                    placeholder="Enter a topic (Example: Python)"
+                    required
+                >
+
+                <button type="submit">
+                    Get Learning Tips 🧠
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
